@@ -1,0 +1,2 @@
+--#type=local
+-- I am also a local script, even though my name does not mention it.

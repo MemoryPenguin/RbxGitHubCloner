@@ -1,0 +1,2 @@
+--#type=mod
+-- I am also a module script.
