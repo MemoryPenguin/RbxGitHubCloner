@@ -88,7 +88,7 @@ function GuiController.GetBranch()
 end
 
 function GuiController.GetRepositoryInfo()
-	local user, repository = repoUrlBox.Text:match("github%.com/(%w+)/(%w+)")
+	local user, repository = repoUrlBox.Text:match("github%.com/([%w-_]+)/([%w-_]+)")
 	return {
 		Username = user;
 		Repository = repository;
