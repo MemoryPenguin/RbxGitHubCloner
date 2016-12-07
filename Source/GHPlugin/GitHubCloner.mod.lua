@@ -10,13 +10,22 @@ local broker = HttpBroker.new(200)
 
 local GitHubCloner = {}
 
-function GitHubCloner.Clone(user, repository, tag)
+function GitHubCloner.Clone(user, repository, tag, apiKey)
 	tag = tag or DefaultTag
 	local files = {}
+	
+	-- Can't set User-Agent so going to use From
+	local headers = {
+		["From"] = "ROBLOX GitHub Cloner: MemoryPenguin/RbxGitHubCloner";
+	}
+	
+	if apiKey ~= nil and apiKey ~= "" then
+		headers["Authorization"] = "token "..apiKey
+	end
 
-	local success, treeListingJson = broker:Get(("%srepos/%s/%s/git/trees/%s?recursive=1"):format(BaseApiUrl, user, repository, tag))
+	local success, treeListingJson = broker:Get(("%srepos/%s/%s/git/trees/%s?recursive=1"):format(BaseApiUrl, user, repository, tag), false, headers)
 	if not success then
-		error("[GitHubCloner]: Could not retrieve file tree for user "..user.."'s repository "..repository.."@"..tag..": "..treeListingJson)
+		error("[GitHubCloner]: Could not retrieve file tree for user "..user.."'s repository "..repository.."@"..tag..": "..treeListingJson, 0)
 	end
 
 	local treeListing = HttpService:JSONDecode(treeListingJson)
@@ -27,13 +36,11 @@ function GitHubCloner.Clone(user, repository, tag)
 	for _, entry in ipairs(treeListing.tree) do
 		if entry.type == "blob" then
 			local url = ("%s%s/%s/%s/%s"):format(BaseRawUrl, user, repository, tag, entry.path)
-			local success, contents = broker:Get(url)
+			local success, contents = broker:Get(url, false, headers)
 			
 			if not success then
-				error("[GitHubCloner]: Could not get file at "..url..": "..contents)
+				error("[GitHubCloner]: Could not get file at "..url..": "..contents, 0)
 			end
-			
-			print("Read "..entry.path)
 			
 			table.insert(files, {
 				Path = entry.path;
@@ -47,7 +54,9 @@ function GitHubCloner.Clone(user, repository, tag)
 end
 
 function GitHubCloner.GetRateLimit()
-	local success, limitsJson = broker:Get(("%srate_limit"):format(BaseApiUrl))
+	local success, limitsJson = broker:Get(("%srate_limit"):format(BaseApiUrl), false, {
+		["From"] = "ROBLOX GitHub Cloner: MemoryPenguin/RbxGitHubCloner";
+	})
 
 	if success then
 		local rawLimits = HttpService:JSONDecode(limitsJson)
@@ -56,6 +65,8 @@ function GitHubCloner.GetRateLimit()
 			Remaining = rawLimits.resources.core.remaining;
 			ResetsAt = rawLimits.resources.core.reset;
 		}
+	else
+		error(limitsJson)
 	end
 end
 
