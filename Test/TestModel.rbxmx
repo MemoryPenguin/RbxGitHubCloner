@@ -1,0 +1,167 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Part" referent="RBX89D223E950004237AB15141F99C49BFB">
+		<Properties>
+			<bool name="Anchored">false</bool>
+			<float name="BackParamA">-0.5</float>
+			<float name="BackParamB">0.5</float>
+			<token name="BackSurface">0</token>
+			<token name="BackSurfaceInput">0</token>
+			<float name="BottomParamA">-0.5</float>
+			<float name="BottomParamB">0.5</float>
+			<token name="BottomSurface">4</token>
+			<token name="BottomSurfaceInput">0</token>
+			<int name="BrickColor">194</int>
+			<CoordinateFrame name="CFrame">
+				<X>-52.5</X>
+				<Y>0.5</Y>
+				<Z>-5.5</Z>
+				<R00>1</R00>
+				<R01>0</R01>
+				<R02>0</R02>
+				<R10>0</R10>
+				<R11>1</R11>
+				<R12>0</R12>
+				<R20>0</R20>
+				<R21>0</R21>
+				<R22>1</R22>
+			</CoordinateFrame>
+			<bool name="CanCollide">true</bool>
+			<PhysicalProperties name="CustomPhysicalProperties">
+				<CustomPhysics>true</CustomPhysics>
+				<Density>0.699999988</Density>
+				<Friction>0.300000012</Friction>
+				<Elasticity>0.5</Elasticity>
+				<FrictionWeight>1</FrictionWeight>
+				<ElasticityWeight>1</ElasticityWeight>
+			</PhysicalProperties>
+			<float name="Elasticity">0.5</float>
+			<float name="Friction">0.300000012</float>
+			<float name="FrontParamA">-0.5</float>
+			<float name="FrontParamB">0.5</float>
+			<token name="FrontSurface">0</token>
+			<token name="FrontSurfaceInput">0</token>
+			<float name="LeftParamA">-0.5</float>
+			<float name="LeftParamB">0.5</float>
+			<token name="LeftSurface">0</token>
+			<token name="LeftSurfaceInput">0</token>
+			<bool name="Locked">false</bool>
+			<token name="Material">256</token>
+			<string name="Name">Part</string>
+			<float name="Reflectance">0</float>
+			<float name="RightParamA">-0.5</float>
+			<float name="RightParamB">0.5</float>
+			<token name="RightSurface">0</token>
+			<token name="RightSurfaceInput">0</token>
+			<Vector3 name="RotVelocity">
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Vector3>
+			<float name="TopParamA">-0.5</float>
+			<float name="TopParamB">0.5</float>
+			<token name="TopSurface">3</token>
+			<token name="TopSurfaceInput">0</token>
+			<float name="Transparency">0</float>
+			<Vector3 name="Velocity">
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Vector3>
+			<token name="formFactorRaw">1</token>
+			<token name="shape">1</token>
+			<Vector3 name="size">
+				<X>1</X>
+				<Y>1</Y>
+				<Z>1</Z>
+			</Vector3>
+		</Properties>
+		<Item class="ParticleEmitter" referent="RBXE79E4A3ED84E4562940CE50DAFCFF0A1">
+			<Properties>
+				<Vector3 name="Acceleration">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<ColorSequence name="Color">0 0.290196 0.670588 1 0 0.574394 0.231373 1 0.113725 0 1 1 1 1 0 </ColorSequence>
+				<float name="Drag">0</float>
+				<token name="EmissionDirection">1</token>
+				<bool name="Enabled">true</bool>
+				<NumberRange name="Lifetime">1 2 </NumberRange>
+				<float name="LightEmission">0</float>
+				<bool name="LockedToPart">false</bool>
+				<string name="Name">ParticleEmitter</string>
+				<float name="Rate">20</float>
+				<NumberRange name="RotSpeed">0 0 </NumberRange>
+				<NumberRange name="Rotation">0 0 </NumberRange>
+				<NumberSequence name="Size">0 1 0 0.365337 5.6875 0 0.80798 0.4375 0 1 1 0 </NumberSequence>
+				<NumberRange name="Speed">5 5 </NumberRange>
+				<Content name="Texture"><url>rbxasset://textures/particles/sparkles_main.dds</url></Content>
+				<NumberSequence name="Transparency">0 0 0 0.5 0.75 0.25 1 0 0 </NumberSequence>
+				<float name="VelocityInheritance">0</float>
+				<float name="VelocitySpread">0</float>
+				<float name="ZOffset">0</float>
+			</Properties>
+		</Item>
+		<Item class="ObjectValue" referent="RBX6DF6787A084B4834A6108F2C5D99A4BD">
+			<Properties>
+				<string name="Name">Obj</string>
+				<Ref name="Value">RBX89D223E950004237AB15141F99C49BFB</Ref>
+			</Properties>
+		</Item>
+		<Item class="Color3Value" referent="RBXB8710E11AEA24CEAB31EA6151E14ADF5">
+			<Properties>
+				<string name="Name">Color</string>
+				<Color3 name="Value">4280338334</Color3>
+			</Properties>
+		</Item>
+		<Item class="ScreenGui" referent="RBX85128696EA054E60AC605BDB5BA63DF8">
+			<Properties>
+				<int name="DisplayOrder">0</int>
+				<bool name="Enabled">true</bool>
+				<string name="Name">ScreenGui</string>
+				<bool name="ResetOnSpawn">true</bool>
+			</Properties>
+			<Item class="Frame" referent="RBX44DA4D2C2B294F57BBF0FD0540120FD0">
+				<Properties>
+					<bool name="Active">false</bool>
+					<Vector2 name="AnchorPoint">
+						<X>0.5</X>
+						<Y>0.5</Y>
+					</Vector2>
+					<Color3 name="BackgroundColor3">4294967295</Color3>
+					<float name="BackgroundTransparency">0</float>
+					<Color3 name="BorderColor3">4279970357</Color3>
+					<int name="BorderSizePixel">1</int>
+					<bool name="ClipsDescendants">false</bool>
+					<bool name="Draggable">false</bool>
+					<string name="Name">Frame</string>
+					<Ref name="NextSelectionDown">null</Ref>
+					<Ref name="NextSelectionLeft">null</Ref>
+					<Ref name="NextSelectionRight">null</Ref>
+					<Ref name="NextSelectionUp">null</Ref>
+					<UDim2 name="Position">
+						<XS>0.5</XS>
+						<XO>0</XO>
+						<YS>0.5</YS>
+						<YO>0</YO>
+					</UDim2>
+					<float name="Rotation">0</float>
+					<bool name="Selectable">false</bool>
+					<Ref name="SelectionImageObject">null</Ref>
+					<UDim2 name="Size">
+						<XS>0</XS>
+						<XO>100</XO>
+						<YS>0</YS>
+						<YO>100</YO>
+					</UDim2>
+					<token name="SizeConstraint">0</token>
+					<token name="Style">0</token>
+					<bool name="Visible">true</bool>
+					<int name="ZIndex">3</int>
+				</Properties>
+			</Item>
+		</Item>
+	</Item>
+</roblox>
